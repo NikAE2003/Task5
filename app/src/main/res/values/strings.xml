@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Task5</string>
+    <string name="size9x12">9 × 12</string>
+    <string name="size10x15">10 × 15</string>
+    <string name="size18x24">18 × 24</string>
+    <string name="ok">OK</string>
 </resources>
