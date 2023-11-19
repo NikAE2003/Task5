@@ -1,9 +1,13 @@
 package com.example.task5
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+
+const val EXTRA_ANSWER = "Answer"
 
 class AnswerActivity : AppCompatActivity() {
 
@@ -15,6 +19,15 @@ class AnswerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_answer)
 
         textView = findViewById(R.id.textView_answer)
-        textView.setText("Hello world!!!")
+        val answer = intent.getIntExtra(EXTRA_ANSWER, 0)
+        textView.setText("Оплатить = $answer рублей")
+    }
+
+    companion object{
+        fun newIntent(pakageContext: Context, answer: Int): Intent {
+            return Intent(pakageContext, AnswerActivity::class.java).apply{
+                putExtra(EXTRA_ANSWER, answer)
+            }
+        }
     }
 }

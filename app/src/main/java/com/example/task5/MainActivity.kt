@@ -29,9 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         button_ok.setOnClickListener {
             val cost = viewModel.getCost(radioGroup.checkedRadioButtonId, editNumberCount.text.toString().toInt())
-            Toast.makeText(this, "$cost", Toast.LENGTH_SHORT).show()
-
-            val intent = Intent(this, AnswerActivity::class.java)
+            val intent = AnswerActivity.newIntent(this, cost)
             startActivity(intent)
         }
     }
