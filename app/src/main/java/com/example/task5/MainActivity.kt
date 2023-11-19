@@ -1,5 +1,6 @@
 package com.example.task5
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -29,6 +30,9 @@ class MainActivity : AppCompatActivity() {
         button_ok.setOnClickListener {
             val cost = viewModel.getCost(radioGroup.checkedRadioButtonId, editNumberCount.text.toString().toInt())
             Toast.makeText(this, "$cost", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, AnswerActivity::class.java)
+            startActivity(intent)
         }
     }
 }
